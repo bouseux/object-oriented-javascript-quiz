@@ -1,0 +1,11 @@
+/* CSS Document */
+
+div.layout { margin:0px 0px 0px 0px; }
+#modulediv { text-align:center; padding:0px 0px 0px 0px; }
+#headdiv { text-align:center ; }
+td.module { max-width:80px;}
+#bodydiv { overflow:scroll;height:350px; max-height:350px; overflow-x:hidden;border:thin inset black;}
+#footer{text-align:center;}
+body {margin-top:0px;}
+#sectionheader {padding:0px 0px 0px 10px;}
+ul {list-style-type:none;}

@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Quiz</title>
+<script type="text/javascript" src="quiz.js"></script>
+<script type="text/javascript" src="questions.js"></script>
+<script type="text/javascript" src="test.js"></script>
+<link rel="stylesheet" href="quiz.css" />
+</head>
+
+<body onLoad="displayset(0,0)">
+<form name="submitquestions" action="index.html" method="get">
+<div id="headdiv" class="layout">
+<h1>
+QUIZ: 
+<script>
+document.writeln(quiz1.name)
+</script>
+</h1>
+</div>
+
+<div id="modulediv" class="layout" >
+<table align="center"><tr>
+<script>
+
+
+totalmodules = quiz1.total()
+for(i = 0;i < totalmodules;i++)
+{
+	currentmodule = quiz1.get(i)
+	document.writeln('<td class="module" cellspacing=0>')	
+	totalsets = currentmodule.total()
+	for(x=0;x<totalsets;x++)
+	{
+		currentset = currentmodule.get(x)
+		document.writeln('<a href="javascript:displayset('+ i +','+ x +')">'+  currentmodule.name +'(' + currentset.name + ')</a>|<br>')
+	
+	}
+	document.writeln('</td>')
+}
+
+</script>
+</tr></table>
+</div>
+<div id="sectionheader" class="layout">
+<h3 id="hl">&nbsp;</h3>
+</div>
+
+<div id="bodydiv" class="layout">
+</div>
+<div id="footer" class="layout">
+<br />
+<input type="button" onclick="displayresults()" value="Submit" />
+</div>
+</form>
+</body>
+</html>
